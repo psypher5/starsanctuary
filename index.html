@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Sanctuary</title>
+  <meta name="description" content="Star Sanctuary — An experience studio for art, games, and media.">
+  
+  <!-- Favicon & Brand Icons -->
+  <link rel="icon" type="image/png" href="assets/brand/star_emblem.png">
+  <link rel="apple-touch-icon" href="assets/brand/star_emblem.png">
+  <meta name="theme-color" content="#030008">
+
+  <!-- Google Fonts: Outfit & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/player.css">
+</head>
+<body>
+
+  <!-- Ambient Void Canvas Background -->
+  <div class="cosmic-backdrop"></div>
+  <canvas id="cosmic-starfield" class="cosmic-starfield"></canvas>
+  <div class="nebula-glow">
+    <div class="nebula-orb orb-cyan"></div>
+    <div class="nebula-orb orb-violet"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- Site Header (Fades in on scroll with centered wordmark)           -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <header id="site-header">
+    <div class="header-col header-left">
+      <a href="#creed" class="nav-item">The Creed</a>
+      <a href="#experiences" class="nav-item">Experiences</a>
+    </div>
+
+    <a href="#" class="brand-centered" aria-label="Star Sanctuary Home">
+      <img src="assets/brand/wordmark.png" alt="Star Sanctuary" class="header-centered-wordmark">
+    </a>
+
+    <div class="header-col header-right">
+      <a href="mailto:hello@starsanctuary.uk" class="nav-item">Transmission</a>
+      <button type="button" class="btn-audio-toggle" id="audio-toggle" aria-label="Toggle Studio Soundtrack">
+        <span class="audio-toggle-indicator" id="audio-toggle-icon">♫</span>
+        <span id="audio-toggle-label">SOUNDTRACK</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- Hero: Large Wordmark Above + Free-Spinning Star in Void          -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section id="hero">
+      <!-- Big Majestic Wordmark Above Star -->
+      <div class="hero-brand-top">
+        <img src="assets/brand/wordmark.png" alt="Star Sanctuary" class="hero-huge-wordmark">
+      </div>
+
+      <!-- 3D Three.js Merkaba Star Canvas -->
+      <div id="star-hero-canvas"></div>
+
+      <!-- Sacred Geometry Spirograph Rings Backdrop -->
+      <div class="sacred-rings-backdrop">
+        <svg class="sacred-svg-rings" viewBox="0 0 400 400" fill="none" stroke="rgba(56, 189, 248, 0.22)" stroke-width="0.8">
+          <circle cx="200" cy="200" r="180" stroke-dasharray="4 8" />
+          <circle cx="200" cy="200" r="140" stroke="rgba(245, 158, 11, 0.18)" />
+          <polygon points="200,20 355,110 355,290 200,380 45,290 45,110" stroke="rgba(56, 189, 248, 0.25)" />
+          <polygon points="200,380 45,110 355,110" stroke="rgba(168, 85, 247, 0.2)" />
+        </svg>
+        <svg class="sacred-svg-rings-reverse" viewBox="0 0 400 400" fill="none" stroke="rgba(245, 158, 11, 0.15)" stroke-width="0.6">
+          <polygon points="200,20 45,290 355,290" stroke-dasharray="3 6" />
+        </svg>
+      </div>
+
+      <!-- Minimal Void Scroll Anchor -->
+      <div class="hero-void-anchor">
+        <a href="#creed" class="void-scroll-link" aria-label="Enter Sanctuary">
+          <span class="void-hint">enter sanctuary</span>
+          <span class="void-chevron">↓</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- The Sanctuary Creed                                               -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section id="creed" class="creed-section">
+      <div class="creed-frame">
+        <blockquote class="creed-body">
+          <p class="creed-line line-title">AIM TO-WARD THE STARS</p>
+          <p class="creed-line">Shine bright</p>
+          <p class="creed-line">Knights of the realm</p>
+          <p class="creed-line">Be a beacon of hope</p>
+          <p class="creed-line">light the path</p>
+          <p class="creed-line">for <span class="creed-highlight-gold">yOURselves</span></p>
+          <p class="creed-line">for the future</p>
+          <p class="creed-line line-home">
+            <span class="creed-cap">H</span>ere <span class="creed-cap">O</span>n <span class="creed-cap">M</span>other <span class="creed-cap">E</span>arth
+          </p>
+          <p class="creed-line">and beyond.</p>
+
+          <div class="creed-divider">
+            <span class="creed-divider-line"></span>
+            <span class="creed-divider-gem">✦</span>
+            <span class="creed-divider-line"></span>
+          </div>
+
+          <p class="creed-coda">
+            “Our aim is to foster a sanctuary for creativity.”
+          </p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- Experiences (Art, games, media)                                   -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <section id="experiences" class="section-container">
+      <div class="section-header-block">
+        <span class="section-kicker">Experiences</span>
+        <h2 class="section-title">Art, Games, Media.</h2>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Card 1: Noble Gnomes (Hero Wide Card) -->
+        <article class="bento-card col-span-8" data-experience="noblegnomes">
+          <div class="bento-media-wrap media-large">
+            <img src="assets/showcase/noble_gnomes.png" alt="Noble Gnomes" loading="lazy">
+            <div class="bento-badge-strip">
+              <span class="status-chip chip-live">PLAYABLE 3D</span>
+            </div>
+          </div>
+          <div class="bento-body">
+            <div class="bento-title-row">
+              <h3 class="bento-title">Noble Gnomes</h3>
+              <span class="bento-arrow">↗</span>
+            </div>
+            <div class="bento-tagline">Steam-Powered Pond Exploration &amp; Slime Arcana</div>
+            <p class="bento-desc">Captain the steam-powered "Puddlehopper" across an enchanted lilypad pond with a stalwart crew of gnomes, confronting ancient glowing moss slime behemoths with arcane shield runes.</p>
+            <div class="bento-tech-tags">
+              <span class="tech-tag">Three.js</span>
+              <span class="tech-tag">WebGL Shaders</span>
+              <span class="tech-tag">Web Audio</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Moments -->
+        <article class="bento-card col-span-4" data-experience="moments">
+          <div class="bento-media-wrap">
+            <img src="assets/showcase/moments.jpg" alt="Moments" loading="lazy">
+            <div class="bento-badge-strip">
+              <span class="status-chip chip-live">ACOUSTIC DIORAMA</span>
+            </div>
+          </div>
+          <div class="bento-body">
+            <div class="bento-title-row">
+              <h3 class="bento-title">Moments</h3>
+              <span class="bento-arrow">↗</span>
+            </div>
+            <div class="bento-tagline">WebGL Acoustic Garden</div>
+            <p class="bento-desc">A serene spatial audio and visual diorama exploring organic flora growth, interactive ripples, and procedural harmonic resonance.</p>
+            <div class="bento-tech-tags">
+              <span class="tech-tag">WebGL</span>
+              <span class="tech-tag">Spatial Audio</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: ewe-FO -->
+        <article class="bento-card col-span-4" data-experience="ewefo">
+          <div class="bento-media-wrap">
+            <img src="assets/showcase/ewefo.png" alt="ewe-FO" loading="lazy">
+            <div class="bento-badge-strip">
+              <span class="status-chip chip-3d">PHYSICS</span>
+            </div>
+          </div>
+          <div class="bento-body">
+            <div class="bento-title-row">
+              <h3 class="bento-title">ewe-FO</h3>
+              <span class="bento-arrow">↗</span>
+            </div>
+            <div class="bento-tagline">Cosmic Physics Sandbox</div>
+            <p class="bento-desc">Extraterrestrial tractor-beam physics playground exploring rigid-body dynamics and playful chaos engineering.</p>
+            <div class="bento-tech-tags">
+              <span class="tech-tag">Godot 4</span>
+              <span class="tech-tag">Three.js</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4: Aegis of Ages -->
+        <article class="bento-card col-span-4" data-experience="aegis">
+          <div class="bento-media-wrap">
+            <img src="assets/showcase/aegis_of_ages.webp" alt="Aegis of Ages" loading="lazy">
+            <div class="bento-badge-strip">
+              <span class="status-chip chip-gold">STRATEGY</span>
+            </div>
+          </div>
+          <div class="bento-body">
+            <div class="bento-title-row">
+              <h3 class="bento-title">Aegis of Ages</h3>
+              <span class="bento-arrow">↗</span>
+            </div>
+            <div class="bento-tagline">Real-time 3D Fortress Siege</div>
+            <p class="bento-desc">Tactical fortress defense prototype testing real-time WebGL instancing, pathfinding algorithms, and dynamic atmospheric weather.</p>
+            <div class="bento-tech-tags">
+              <span class="tech-tag">Instanced WebGL</span>
+              <span class="tech-tag">Tactical AI</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5: Sanctuary Core -->
+        <article class="bento-card col-span-4">
+          <div class="bento-media-wrap">
+            <img src="assets/brand/crest_badge.jpg" alt="Sanctuary Core" loading="lazy">
+            <div class="bento-badge-strip">
+              <span class="status-chip chip-live">R&amp;D</span>
+            </div>
+          </div>
+          <div class="bento-body">
+            <div class="bento-title-row">
+              <h3 class="bento-title">Sanctuary Core</h3>
+              <span class="bento-arrow">↗</span>
+            </div>
+            <div class="bento-tagline">Edge 3D &amp; Shader Pipelines</div>
+            <p class="bento-desc">Foundation for ultra-fast, zero-bloat 3D WebGL streaming, TSL shaders, and procedural Web Audio.</p>
+            <div class="bento-tech-tags">
+              <span class="tech-tag">WebGPU Ready</span>
+              <span class="tech-tag">60 FPS Edge</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- Experience Preview Modal                                          -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <div class="modal-backdrop" id="experience-modal" aria-hidden="true" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-media-frame">
+        <img id="modal-img" src="" alt="">
+        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close Preview">✕</button>
+      </div>
+      <div class="modal-body">
+        <h2 class="bento-title" id="modal-title" style="font-size:1.8rem; margin-bottom: 6px;">Experience Title</h2>
+        <div class="bento-tagline" id="modal-tagline" style="margin-bottom: 14px;">Experience Tagline</div>
+        <p class="bento-desc" id="modal-desc" style="font-size: 1rem; margin-bottom: 1.5rem;">Detailed description.</p>
+        <div style="display:flex; gap: 12px;">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="btn-tactile btn-primary-cyan" id="modal-action-link">Launch Build ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- Footer (Sparse, Void, Minimal Transmission)                       -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <footer id="site-footer">
+    <div class="footer-transmission-line">
+      <a href="mailto:hello@starsanctuary.uk" class="footer-link">hello@starsanctuary.uk</a>
+      <span class="footer-dot">&bull;</span>
+      <a href="https://x.com/psypher5" target="_blank" rel="noopener noreferrer" class="footer-link">X: @psypher5</a>
+      <span class="footer-dot">&bull;</span>
+      <a href="https://github.com/psypher5" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+    </div>
+
+    <div class="edge-status-pill">
+      <span class="edge-dot"></span>
+      <span>CLOUDFLARE EDGE // ACTIVE</span>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- Floating Expandable Audio Player Widget (Ported from psypher5)       -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <div id="audio-player-widget" class="audio-player-widget collapsed" aria-label="Soundtrack Music Player">
+    <!-- Compact Mini-Widget Button / Disc Trigger -->
+    <div class="audio-mini-dock" id="audio-mini-dock" onclick="toggleAudioPlayer(event)" title="Studio Soundtrack Player" role="button" tabindex="0" aria-label="Toggle Soundtrack Music Player">
+      <div class="audio-mini-disc-wrap">
+        <div class="audio-vinyl-disc" id="audio-mini-vinyl">
+          <img src="assets/audio/art/track_0.png" alt="Vinyl Label" class="audio-disc-art" id="audio-mini-art">
+          <div class="audio-disc-grooves"></div>
+          <div class="audio-disc-hole"></div>
+        </div>
+        <!-- Mini Equalizer Soundwave Bars -->
+        <div class="audio-mini-eq" id="audio-mini-eq" aria-hidden="true">
+          <span class="eq-bar"></span>
+          <span class="eq-bar"></span>
+          <span class="eq-bar"></span>
+        </div>
+      </div>
+
+      <!-- Mini Play/Pause Quick-Toggle Button -->
+      <button class="audio-mini-playbtn" id="audio-mini-playbtn" onclick="toggleAudioPlayback(event)" title="Play / Pause Soundtrack" aria-label="Play or pause soundtrack">
+        <svg id="mini-play-icon" viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg>
+        <svg id="mini-pause-icon" viewBox="0 0 24 24" style="display:none;"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+      </button>
+    </div>
+
+    <!-- Expanded Music Deck Panel -->
+    <div class="audio-deck-panel glass-panel" id="audio-deck-panel" onclick="event.stopPropagation()">
+      <!-- Deck Header -->
+      <div class="audio-deck-header">
+        <div class="audio-header-left">
+          <span class="audio-live-dot"></span>
+          <div class="audio-header-titles">
+            <span class="audio-header-badge">STAR SANCTUARY SOUNDSCAPES</span>
+            <span class="audio-header-sub">Original Studio Soundtrack</span>
+          </div>
+        </div>
+        <button class="audio-btn-minimize" onclick="toggleAudioPlayer(event)" title="Minimize Player" aria-label="Minimize Player">&times;</button>
+      </div>
+
+      <!-- Now Playing Turntable / Track Visual Area -->
+      <div class="audio-hero-display">
+        <div class="audio-turntable-visual">
+          <div class="audio-turntable-vinyl" id="audio-deck-vinyl" onclick="toggleAudioPlayback(event)" style="cursor:pointer;" title="Click to Play / Pause">
+            <img src="assets/audio/art/track_0.png" alt="Vinyl Art" class="audio-turntable-art" id="audio-deck-art">
+            <div class="audio-turntable-grooves"></div>
+            <div class="audio-turntable-spindle"></div>
+          </div>
+        </div>
+        <div class="audio-meta-display">
+          <div class="audio-track-count" id="audio-track-count">TRACK 01 OF 06</div>
+          <h3 class="audio-track-title" id="audio-track-title">Arrival at the Maw</h3>
+          <div class="audio-track-artist" id="audio-track-artist">Tom Woodward &bull; Gemini AI</div>
+          <span class="audio-genre-pill" id="audio-track-genre">Orchestral / Ambient</span>
+        </div>
+      </div>
+
+      <!-- Like & Social Share Action Row -->
+      <div class="audio-deck-actions">
+        <button class="audio-action-btn audio-like-btn" id="audio-like-btn" onclick="toggleAudioLike(event)" title="Like this track" aria-label="Like this track">
+          <svg class="heart-icon" viewBox="0 0 24 24" width="16" height="16">
+            <path class="heart-path" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span class="audio-like-count" id="audio-like-count">142</span>
+          <div class="audio-like-particles" id="audio-like-particles" aria-hidden="true"></div>
+        </button>
+
+        <div class="audio-share-wrapper">
+          <button class="audio-action-btn audio-share-btn" id="audio-share-btn" onclick="toggleAudioShareMenu(event)" title="Share track" aria-label="Share track">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"></circle>
+              <circle cx="6" cy="12" r="3"></circle>
+              <circle cx="18" cy="19" r="3"></circle>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+            </svg>
+            <span class="share-btn-text">Share</span>
+          </button>
+
+          <!-- Share Popover Menu -->
+          <div class="audio-share-popover" id="audio-share-popover" onclick="event.stopPropagation()">
+            <button class="share-item-btn" onclick="shareTrackOnX(event)">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+              <span>Share on X</span>
+            </button>
+            <button class="share-item-btn" onclick="copyTrackLink(event)">
+              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+              </svg>
+              <span id="copy-link-label">Copy Track Link</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dynamic Squiggly Wavy Scrubber (Android Auto Style) & Timers -->
+      <div class="audio-timeline-wrap">
+        <div class="audio-wave-container" id="audio-wave-container">
+          <canvas class="audio-wave-canvas" id="audio-wave-canvas"></canvas>
+          <div class="audio-wave-hover-line" id="audio-wave-hover-line"></div>
+          <div class="audio-wave-tooltip" id="audio-wave-tooltip">0:00</div>
+        </div>
+        <div class="audio-time-row">
+          <span class="audio-time-curr" id="audio-time-curr">0:00</span>
+          <span class="audio-time-dur" id="audio-time-dur">0:00</span>
+        </div>
+      </div>
+
+      <!-- Playback Controls -->
+      <div class="audio-controls-row">
+        <button class="audio-ctrl-btn" onclick="prevAudioTrack()" title="Previous Track" aria-label="Previous Track">
+          <svg viewBox="0 0 24 24"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>
+        </button>
+        <button class="audio-play-master-btn" id="audio-play-master" onclick="toggleAudioPlayback(event)" title="Play / Pause" aria-label="Play or pause">
+          <svg id="deck-play-icon" viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg>
+          <svg id="deck-pause-icon" viewBox="0 0 24 24" style="display:none;"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </button>
+        <button class="audio-ctrl-btn" onclick="nextAudioTrack()" title="Next Track" aria-label="Next Track">
+          <svg viewBox="0 0 24 24"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>
+        </button>
+
+        <!-- Volume Group -->
+        <div class="audio-volume-group">
+          <button class="audio-vol-btn" id="audio-mute-btn" onclick="toggleAudioMute()" title="Mute / Unmute" aria-label="Mute or unmute">
+            <svg id="vol-high-icon" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+            <svg id="vol-muted-icon" viewBox="0 0 24 24" style="display:none;"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          </button>
+          <input type="range" class="audio-vol-slider" id="audio-vol-slider" min="0" max="1" step="0.02" value="0.8" oninput="setAudioVolume(this.value)" aria-label="Volume">
+        </div>
+      </div>
+
+      <!-- Tracklist Drawer -->
+      <div class="audio-tracklist-section">
+        <div class="audio-tracklist-header">
+          <span>TRACKS</span>
+          <span class="audio-tracklist-sub">6 AUDIO FILES</span>
+        </div>
+        <div class="audio-tracklist-items" id="audio-tracklist-items">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Hidden Audio Element -->
+    <audio id="gemini-audio-player" preload="auto" src="assets/audio/Arrival_at_the_Maw.mp3"></audio>
+  </div>
+
+  <!-- Application Entry Point -->
+  <script type="module" src="scripts/app.js"></script>
+</body>
+</html>
