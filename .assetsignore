@@ -1,0 +1,8 @@
+.git/
+.gitignore
+.assetsignore
+server.js
+README.md
+wrangler.jsonc
+node_modules/
+*.log

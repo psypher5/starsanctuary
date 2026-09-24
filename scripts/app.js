@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tagline: 'Memories of Merlin',
       desc: 'An emotional 3D memorial journey created for Merlin the miniature dachshund. Guide Merlin across celestial meadows, bridge rainbow chasms, collect memory prism gems, and run free under vibrant starry skies.',
       img: 'assets/showcase/moments.jpg',
-      link: 'games/moments/index.html',
+      link: 'https://psypher5.co.uk/games/moments/',
       linkLabel: 'Play 3D Memorial Journey ↗'
     },
     ewefo: {
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
       tagline: 'Abduct. Automate. Ascend.',
       desc: 'An arcade physics-based abduction game set across a diorama-styled British countryside. Pilot a tractor-beam equipped UFO by night to herd and harvest livestock, while building automated conveyor networks, energy condensors, and processing pipelines by day.',
       img: 'assets/showcase/ewefo.png',
-      link: 'games/ewefo/index.html',
+      link: 'https://psypher5.co.uk/games/ewefo/',
       linkLabel: 'Launch 3D Physics Prototype ↗'
     },
     aegis: {
