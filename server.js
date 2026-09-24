@@ -20,7 +20,11 @@ const MIME = {
   '.mp3': 'audio/mpeg',
   '.wav': 'audio/wav',
   '.woff2': 'font/woff2',
-  '.woff': 'font/woff'
+  '.woff': 'font/woff',
+  '.fbx': 'application/octet-stream',
+  '.gltf': 'model/gltf+json',
+  '.glb': 'model/gltf-binary',
+  '.bin': 'application/octet-stream'
 };
 
 const server = http.createServer((req, res) => {
@@ -28,12 +32,17 @@ const server = http.createServer((req, res) => {
   let pathname = decodeURIComponent(parsedUrl.pathname);
   if (pathname === '/') pathname = '/index.html';
 
-  const filePath = path.normalize(path.join(ROOT, pathname));
+  let filePath = path.normalize(path.join(ROOT, pathname));
 
   // Security: prevent directory traversal
   if (!filePath.startsWith(ROOT)) {
     res.writeHead(403, { 'Content-Type': 'text/plain' });
     return res.end('403 Forbidden');
+  }
+
+  // Resolve directory to index.html
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+    filePath = path.join(filePath, 'index.html');
   }
 
   fs.stat(filePath, (err, stats) => {

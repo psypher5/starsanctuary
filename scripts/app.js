@@ -71,32 +71,32 @@ document.addEventListener('DOMContentLoaded', () => {
       tagline: 'Steam-Powered Pond Exploration & Slime Arcana',
       desc: 'Captain the steam-powered "Puddlehopper" across an enchanted lilypad pond with a stalwart crew of gnomes, confronting ancient glowing moss slime behemoths with arcane shield runes.',
       img: 'assets/showcase/noble_gnomes.png',
-      link: 'https://psypher5.co.uk/#projects',
+      link: 'https://noblegnomes.psypher5.workers.dev/',
       linkLabel: 'Launch Playable 3D Build ↗'
     },
     moments: {
       title: 'Moments',
-      tagline: 'WebGL Acoustic Garden',
-      desc: 'A serene spatial audio and visual diorama exploring organic flora growth, interactive ripples, and procedural harmonic resonance.',
+      tagline: 'Memories of Merlin',
+      desc: 'An emotional 3D memorial journey created for Merlin the miniature dachshund. Guide Merlin across celestial meadows, bridge rainbow chasms, collect memory prism gems, and run free under vibrant starry skies.',
       img: 'assets/showcase/moments.jpg',
-      link: 'https://psypher5.co.uk/#projects',
-      linkLabel: 'Experience Spatial WebGL ↗'
+      link: 'games/moments/index.html',
+      linkLabel: 'Play 3D Memorial Journey ↗'
     },
     ewefo: {
       title: 'ewe-FO',
-      tagline: 'Cosmic Physics Sandbox',
-      desc: 'Extraterrestrial tractor-beam physics playground exploring rigid-body dynamics and playful chaos engineering.',
+      tagline: 'Abduct. Automate. Ascend.',
+      desc: 'An arcade physics-based abduction game set across a diorama-styled British countryside. Pilot a tractor-beam equipped UFO by night to herd and harvest livestock, while building automated conveyor networks, energy condensors, and processing pipelines by day.',
       img: 'assets/showcase/ewefo.png',
-      link: 'https://psypher5.co.uk/#projects',
-      linkLabel: 'Inspect Physics Prototype ↗'
+      link: 'games/ewefo/index.html',
+      linkLabel: 'Launch 3D Physics Prototype ↗'
     },
     aegis: {
       title: 'Aegis of Ages',
-      tagline: 'Real-time 3D Fortress Siege',
-      desc: 'Tactical fortress defense prototype testing real-time WebGL instancing, pathfinding algorithms, and dynamic atmospheric weather.',
+      tagline: 'Hilltop Fortress Defense & Siege Arcana',
+      desc: 'Command a hilltop fortress under siege from every direction! Strategically place archers, barricades, and spikes between waves, aim the heavy ballista by hand, douse spreading structural fires, and hold the line against escalating hostile incursions.',
       img: 'assets/showcase/aegis_of_ages.webp',
-      link: 'https://psypher5.co.uk/#projects',
-      linkLabel: 'View Battlefield Architecture ↗'
+      link: 'https://www.spawn.co/@psypher5/aegis-of-ages/play',
+      linkLabel: 'Play Live on Spawn ↗'
     }
   };
 
